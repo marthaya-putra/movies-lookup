@@ -10,13 +10,9 @@ export const SearchResult = async ({
 }: {
   searchParams?: MovieSearchParam;
 }) => {
-  if (!searchParams?.genres) {
-    return <div className={styles.Wrapper}>What to watch today?</div>;
-  }
-
   const recommendedFilms = await fetchRecommendedFilms(
     searchParams?.type || "movie",
-    searchParams.genres,
+    searchParams?.genres || "",
     searchParams?.rating || RatingItems[0].value,
     String(searchParams?.page) || "1"
   );

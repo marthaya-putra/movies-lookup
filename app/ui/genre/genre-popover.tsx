@@ -49,10 +49,11 @@ export const GenrePopover = ({ genres }: GenrePopoverProps) => {
       return;
     }
 
-    const queryString = createQueryString(
+    let queryString = createQueryString(
       GENRES_QUERY_STRING,
       selectedGenres.join("|")
     );
+    queryString = deleteQueryString("page", queryString);
     router.push(`${pathname}?${queryString}`);
   };
 

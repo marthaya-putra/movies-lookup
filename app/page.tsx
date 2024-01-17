@@ -25,7 +25,7 @@ export default function Home({
           <Label>Rating</Label> <Rating />
         </div>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div style={{ color: "white" }}>Loading...</div>}>
         <SearchResult searchParams={searchParams} />
       </Suspense>
     </main>

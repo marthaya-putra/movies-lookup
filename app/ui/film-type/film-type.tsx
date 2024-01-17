@@ -18,6 +18,7 @@ export const FilmType = () => {
   const handleValueChanged = (value: string) => {
     let queryString = createQueryString("type", value);
     queryString = deleteQueryString("genres", queryString);
+    queryString = deleteQueryString("page", queryString);
     router.push(`${pathname}?${queryString}`);
   };
 
@@ -25,6 +26,7 @@ export const FilmType = () => {
     <Select
       items={items}
       onValueChange={handleValueChanged}
+      defaultValue="movie"
       value={searchParams.get("type") ?? "movie"}
     />
   );

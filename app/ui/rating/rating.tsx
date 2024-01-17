@@ -12,13 +12,15 @@ export const Rating = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const { createQueryString } = useQueryString();
+  const { createQueryString, deleteQueryString } = useQueryString();
 
   const ratingParam =
     searchParams.get(RATING_QUERY_STRING) || RatingItems[0].value;
 
   const handleRatingChanged = (value: string) => {
-    const queryString = createQueryString(RATING_QUERY_STRING, value);
+    let queryString = createQueryString(RATING_QUERY_STRING, value);
+    queryString = deleteQueryString("page", queryString);
+
     router.push(`${pathname}?${queryString}`);
   };
 
