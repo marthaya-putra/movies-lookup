@@ -1,0 +1,47 @@
+.Wrapper {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.Link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.Image {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.PagerContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pager {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: white;
+  color: inherit;
+  text-decoration: none;
+}
+
+.PageNumber {
+  color: white;
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pager[aria-disabled="true"] {
+  background: #919eab;
+}

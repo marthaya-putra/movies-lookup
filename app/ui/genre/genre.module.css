@@ -1,0 +1,23 @@
+.Wrapper {
+  display: grid;
+  width: 450px;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.ButtonWrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Button {
+  border-radius: 4px;
+  padding: 0 15px;
+  line-height: 1;
+  font-weight: 500;
+  height: 35px;
+  background-color: var(--violet-11);
+  color: white;
+  box-shadow: 0 2px 10px var(--black-a7);
+}
