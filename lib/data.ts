@@ -35,8 +35,7 @@ export async function fetchRecommendedFilms(
 async function fetchFromTMDB(url: URL | RequestInfo, options?: RequestInit) {
   let headers = {
     accept: "application/json",
-    authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMGMxNTRjNWNhYzBlMzg2NTAyN2M1MzI2ODM2NTg5NCIsInN1YiI6IjY1ODRmMWZmNGYzM2FkNWNjNjAxYzhhZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jPTIZIBJWtfji-lfHxKRs0s_4-ejo_EpLKlLqfoeamc",
+    authorization: `Bearer ${process.env.TMDB_TOKEN}`,
   };
 
   let otherOptions;
