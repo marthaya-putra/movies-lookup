@@ -24,7 +24,7 @@ export const SearchResult = async ({
   const { results, totalPages } = recommendedFilms;
 
   return (
-    <>
+    <div className={styles.Container}>
       <Pager totalPages={totalPages} />
       <div className={styles.Wrapper}>
         {results.map((result) => {
@@ -44,15 +44,15 @@ export const SearchResult = async ({
                 alt={result.title}
                 className={styles.Image}
               />
-              <h4 style={{ maxWidth: "200px" }}>
+              <h4 style={{ maxWidth: "200px", padding: "8px 0" }}>
                 {result.title} ({year})
               </h4>
-              <div>Rated: {result.voteAverage}</div>
+              <div className={styles.Rating}>{result.voteAverage}</div>
             </a>
           );
         })}
       </div>
       <Pager totalPages={totalPages} />
-    </>
+    </div>
   );
 };

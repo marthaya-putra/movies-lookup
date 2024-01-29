@@ -20,6 +20,10 @@
   color: var(--violet-9);
 }
 
+.SelectTrigger span:first-of-type {
+  min-width: 100px;
+}
+
 .SelectContent {
   overflow: hidden;
   background-color: white;

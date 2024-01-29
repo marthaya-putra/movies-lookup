@@ -4,12 +4,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Select } from "@/components/select/select";
 import { useQueryString } from "@/lib/useQueryString";
 
-export const FilmType = () => {
-  const items = [
-    { value: "movie", label: "Movie" },
-    { value: "tv", label: "TV" },
-  ];
-
+export const FilmType = ({ items }: any) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -26,7 +21,6 @@ export const FilmType = () => {
     <Select
       items={items}
       onValueChange={handleValueChanged}
-      defaultValue="movie"
       value={searchParams.get("type") ?? "movie"}
     />
   );

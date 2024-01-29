@@ -6,17 +6,25 @@ import { Rating } from "./ui/rating/rating";
 import { Suspense } from "react";
 import { Label } from "@/components/label/label";
 import styles from "./page.module.css";
+import { Header } from "./ui/header/header";
 
 export default function Home({
   searchParams,
 }: {
   searchParams?: MovieSearchParam;
 }) {
+  const items = [
+    { value: "movie", label: "Movie" },
+    { value: "tv", label: "TV" },
+  ];
   return (
     <main>
+      <div>
+        <Header />
+      </div>
       <div className={styles.Wrapper}>
         <div className={styles.Filter}>
-          <Label>Recommend me</Label> <FilmType />
+          <Label>Recommend me</Label> <FilmType items={items} />
         </div>
         <div className={styles.Filter}>
           <Label>Genre(s)</Label> <Genre type={searchParams?.type ?? "movie"} />
