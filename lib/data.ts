@@ -32,6 +32,28 @@ export async function fetchRecommendedFilms(
   return result;
 }
 
+export async function fetchActorFilms(
+  type: FilmType,
+  actor: number,
+  page: string = "1"
+) {
+  const url = `${TMDB_URL}/discover/${type}?include_adult=true&language=en-US&page=${page}&sort_by=popularity.desc&with_cast=${actor}`;
+  const data = await fetchFromTMDB(url);
+  const result: DiscoverResult = {
+    page: data.page,
+    results: data.results.map((res: any) => ({
+      posterPath: `https://image.tmdb.org/t/p/w500${res.poster_path}`,
+      title: res.title || res.name,
+      overview: res.overview,
+      voteAverage: res.vote_average,
+      releaseDate: res.release_date || res.first_air_date,
+    })),
+    totalPages: data.total_pages,
+  };
+
+  return result;
+}
+
 export async function fetchActors(searchTerm: string): Promise<Person[]> {
   const url = `${TMDB_URL}/search/person?query=${searchTerm}&include_adult=true&page=1`;
   const data = await fetchFromTMDB(url);
@@ -45,6 +67,21 @@ export async function fetchActors(searchTerm: string): Promise<Person[]> {
     }));
 
   return people.slice(0, 50);
+}
+
+export async function fetchActor(id: number): Promise<Person> {
+  const url = `${TMDB_URL}/person/${id}`;
+  const data = await fetchFromTMDB(url);
+  const person: Person = {
+    id: data.id,
+    imdbId: data.imdb_id,
+    name: data.name,
+    profileImageUrl: `https://image.tmdb.org/t/p/w500${data.profile_path}`,
+    popularity: data.popularity,
+    biography: data.biography,
+  };
+
+  return person;
 }
 
 async function fetchFromTMDB(url: URL | RequestInfo, options?: RequestInit) {

@@ -1,6 +1,6 @@
 "use client";
 import { useQueryString } from "@/lib/useQueryString";
-import styles from "./search-result.module.css";
+import styles from "./pager.module.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { usePathname, useSearchParams } from "next/navigation";
 

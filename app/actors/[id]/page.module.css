@@ -1,0 +1,21 @@
+.FilmTypeWrapper {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.FilmTypeWrapper a {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 4px;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.FilmTypeWrapper a.Selected {
+  background-color: white;
+  color: var(--violet-11);
+}

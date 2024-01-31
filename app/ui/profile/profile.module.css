@@ -1,0 +1,16 @@
+.Profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  color: white;
+}
+
+.Name {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.Bio {
+  text-align: justify;
+}

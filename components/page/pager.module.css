@@ -1,0 +1,29 @@
+.PagerContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pager {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: white;
+  color: inherit;
+  text-decoration: none;
+}
+
+.PageNumber {
+  color: white;
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pager[aria-disabled="true"] {
+  background: #919eab;
+}

@@ -1,9 +1,9 @@
-import Image from "next/image";
 import { MovieSearchParam, RatingItems } from "@/lib/definitions";
 import styles from "./search-result.module.css";
 import { fetchRecommendedFilms } from "@/lib/data";
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
-import { Pager } from "./pager";
+import { Pager } from "@/components/page/pager";
+import { MovieCardsContainer } from "@/components/movie-card-container/movie-cards-container";
+import { MovieCard } from "@/components/movie-card/movie-card";
 
 export const SearchResult = async ({
   searchParams,
@@ -17,41 +17,18 @@ export const SearchResult = async ({
     String(searchParams?.page) || "1"
   );
 
-  const getReleaseYear = (releaseDate: string) => {
-    return releaseDate?.split("-")[0];
-  };
-
   const { results, totalPages } = recommendedFilms;
 
   return (
     <div className={styles.Container}>
       <Pager totalPages={totalPages} />
-      <div className={styles.Wrapper}>
+      <MovieCardsContainer>
         {results.map((result) => {
-          const year = getReleaseYear(result.releaseDate);
+          const key = result.title + result.releaseDate;
 
-          return (
-            <a
-              href={`https://fmoviesz.to/filter?keyword=${result.title}&year[]=${year}`}
-              target="blank"
-              className={styles.Link}
-              key={result.title + result.releaseDate}
-            >
-              <Image
-                width={200}
-                height={300}
-                src={result.posterPath}
-                alt={result.title}
-                className={styles.Image}
-              />
-              <h4 style={{ maxWidth: "200px", padding: "8px 0" }}>
-                {result.title} ({year})
-              </h4>
-              <div className={styles.Rating}>{result.voteAverage}</div>
-            </a>
-          );
+          return <MovieCard key={key} film={result} />;
         })}
-      </div>
+      </MovieCardsContainer>
       <Pager totalPages={totalPages} />
     </div>
   );

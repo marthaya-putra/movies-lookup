@@ -29,6 +29,8 @@ export type Person = {
   name: string;
   profileImageUrl: string;
   popularity: number;
+  imdbId?: string;
+  biography?: string;
 };
 
 export type ActorSearchParams = {
