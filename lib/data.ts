@@ -1,4 +1,4 @@
-import { DiscoverResult, FilmType, Genre } from "./definitions";
+import { DiscoverResult, FilmType, Genre, Person } from "./definitions";
 
 const TMDB_URL = "https://api.themoviedb.org/3";
 
@@ -30,6 +30,21 @@ export async function fetchRecommendedFilms(
   };
 
   return result;
+}
+
+export async function fetchActors(searchTerm: string): Promise<Person[]> {
+  const url = `${TMDB_URL}/search/person?query=${searchTerm}&include_adult=true&page=1`;
+  const data = await fetchFromTMDB(url);
+  const people: Person[] = data.results
+    .sort((a: any, b: any) => b.popularity - a.popularity)
+    .map((res: any) => ({
+      id: res.id,
+      name: res.name,
+      popularity: res.popularity,
+      profileImageUrl: `https://image.tmdb.org/t/p/w500${res.profile_path}`,
+    }));
+
+  return people.slice(0, 50);
 }
 
 async function fetchFromTMDB(url: URL | RequestInfo, options?: RequestInit) {

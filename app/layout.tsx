@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "./ui/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="max-width-wrapper" style={{ margin: "0 auto" }}>
-          {children}
+          <div>
+            <Header />
+          </div>
+          <div style={{ marginTop: "48px" }}>{children}</div>
         </div>
       </body>
     </html>

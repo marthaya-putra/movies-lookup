@@ -24,6 +24,17 @@ export type DiscoverResult = {
   totalPages: number;
 };
 
+export type Person = {
+  id: number;
+  name: string;
+  profileImageUrl: string;
+  popularity: number;
+};
+
+export type ActorSearchParams = {
+  searchTerm?: string;
+};
+
 export const FILM_TYPE_QUERY_STRING = "type";
 
 export const RatingItems = [
