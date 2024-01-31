@@ -1,0 +1,14 @@
+.Label {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.OptionWrapper {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  gap: 16px;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+}
