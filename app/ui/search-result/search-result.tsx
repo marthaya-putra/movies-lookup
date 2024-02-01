@@ -1,7 +1,7 @@
 import { MovieSearchParam, RatingItems } from "@/lib/definitions";
 import styles from "./search-result.module.css";
 import { fetchRecommendedFilms } from "@/lib/data";
-import { Pager } from "@/components/page/pager";
+import { Pager } from "@/components/pager/pager";
 import { MovieCardsContainer } from "@/components/movie-card-container/movie-cards-container";
 import { MovieCard } from "@/components/movie-card/movie-card";
 

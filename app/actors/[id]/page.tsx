@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Profile } from "@/app/ui/profile/profile";
 import { FilmType } from "@/lib/definitions";
 import { ActorFilms } from "@/app/ui/actor-films/actor-films";
+import { MovieCardSkeletons } from "@/components/movie-card-container/movie-card-skeletons";
 
 type ActorPageProps = {
   params: {
@@ -37,7 +38,7 @@ export default function ActorPage({ params, searchParams }: ActorPageProps) {
           TVs
         </a>
       </div>
-      <Suspense>
+      <Suspense fallback={<MovieCardSkeletons />}>
         <ActorFilms
           actor={params.id}
           filmType={searchParams?.filmType}

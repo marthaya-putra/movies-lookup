@@ -1,6 +1,6 @@
 import { MovieCardsContainer } from "@/components/movie-card-container/movie-cards-container";
 import { MovieCard } from "@/components/movie-card/movie-card";
-import { Pager } from "@/components/page/pager";
+import { Pager } from "@/components/pager/pager";
 import { fetchActorFilms } from "@/lib/data";
 import { FilmType } from "@/lib/definitions";
 

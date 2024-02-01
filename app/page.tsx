@@ -6,6 +6,7 @@ import { Rating } from "./ui/rating/rating";
 import { Suspense } from "react";
 import { Label } from "@/components/label/label";
 import styles from "./page.module.css";
+import { MovieCardSkeletons } from "@/components/movie-card-container/movie-card-skeletons";
 
 export default function Home({
   searchParams,
@@ -29,7 +30,7 @@ export default function Home({
           <Label>Rating</Label> <Rating />
         </div>
       </div>
-      <Suspense fallback={<div style={{ color: "white" }}>Loading...</div>}>
+      <Suspense fallback={<MovieCardSkeletons />}>
         <SearchResult searchParams={searchParams} />
       </Suspense>
     </main>

@@ -37,7 +37,8 @@ export async function fetchActorFilms(
   actor: number,
   page: string = "1"
 ) {
-  const url = `${TMDB_URL}/discover/${type}?include_adult=true&language=en-US&page=${page}&sort_by=popularity.desc&with_cast=${actor}`;
+  const url = `${TMDB_URL}/discover/${type}?include_adult=true&language=en-US&page=${page}&sort_by=vote_average.desc&with_cast=${actor}`;
+  console.log(url);
   const data = await fetchFromTMDB(url);
   const result: DiscoverResult = {
     page: data.page,
