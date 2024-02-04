@@ -29,7 +29,7 @@ export const MovieCard = ({ film }: MovieCardProps) => {
       <h4 style={{ maxWidth: "200px", padding: "8px 0" }}>
         {film.title} ({year})
       </h4>
-      <div className={styles.Rating}>{film.voteAverage}</div>
+      <div className={styles.Rating}>{film.voteAverage.toFixed(1)}</div>
     </a>
   );
 };
