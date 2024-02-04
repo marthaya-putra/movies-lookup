@@ -1,0 +1,10 @@
+.Selected {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  inset: 0;
+  background-color: transparent;
+  border-bottom: 4px solid white;
+  padding: 0 16px;
+}

@@ -1,7 +1,6 @@
 import { fetchActors } from "@/lib/data";
 import { ActorSearchParams, Person } from "@/lib/definitions";
 import { ActorsAutocomplete } from "./actors-autocomplete";
-import { Suspense } from "react";
 
 export const SearchActor = async ({
   searchParams,
@@ -16,8 +15,8 @@ export const SearchActor = async ({
   }
 
   return (
-    <Suspense>
+    <div style={{ padding: "0 16px" }}>
       <ActorsAutocomplete actors={actors} />
-    </Suspense>
+    </div>
   );
 };

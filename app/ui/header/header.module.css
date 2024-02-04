@@ -14,9 +14,17 @@
 
 .Menu a {
   color: inherit;
+  position: relative;
   text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 8px;
 }
 
 .Menu a:hover {
-  text-decoration: revert;
+  background-color: white;
+  color: var(--violet-11);
+}
+
+.Menu a:hover div {
+  opacity: 0;
 }

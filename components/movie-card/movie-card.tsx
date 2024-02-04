@@ -20,7 +20,7 @@ export const MovieCard = ({ film }: MovieCardProps) => {
       key={film.title + film.releaseDate}
     >
       <Image
-        width={200}
+        width={224}
         height={300}
         src={film.posterPath}
         alt={film.title}
