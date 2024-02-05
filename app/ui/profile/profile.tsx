@@ -7,7 +7,7 @@ export const Profile = async ({ id }: { id: number }) => {
 
   return (
     <section className={styles.Profile}>
-      <Image
+      <img
         width={300}
         height={300}
         src={actor.profileImageUrl}
@@ -18,12 +18,7 @@ export const Profile = async ({ id }: { id: number }) => {
         <div className={styles.Name}>
           <h2>{actor.name}</h2>
           <a href={`https://www.imdb.com/name/${actor.imdbId}`} target="_blank">
-            <Image
-              width={50}
-              height={20}
-              src="/imdb_logo.svg"
-              alt="IMDB logo"
-            />
+            <img width={50} height={20} src="/imdb_logo.svg" alt="IMDB logo" />
           </a>
         </div>
         <h5>{actor.biography}</h5>

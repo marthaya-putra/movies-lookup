@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./movie-card.module.css";
 import { FilmInfo } from "@/lib/definitions";
 
@@ -19,13 +18,12 @@ export const MovieCard = ({ film }: MovieCardProps) => {
       className={styles.Link}
       key={film.title + film.releaseDate}
     >
-      <Image
+      <img
         width={224}
         height={300}
         src={film.posterPath}
         alt={film.title}
         className={styles.Image}
-        priority
       />
       <h4 style={{ maxWidth: "200px", padding: "8px 0" }}>
         {film.title} ({year})

@@ -66,7 +66,7 @@ type OptionProps = {
 function Option({ actor }: OptionProps) {
   return (
     <a className={styles.OptionWrapper} href={`/actors/${actor.id}`}>
-      <Image
+      <img
         width={50}
         height={50}
         src={actor.profileImageUrl}
