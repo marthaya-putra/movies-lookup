@@ -1,6 +1,5 @@
 import { fetchActor } from "@/lib/data";
 import styles from "./profile.module.css";
-import Image from "next/image";
 
 export const Profile = async ({ id }: { id: number }) => {
   const actor = await fetchActor(id);

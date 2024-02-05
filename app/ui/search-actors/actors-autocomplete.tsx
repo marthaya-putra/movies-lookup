@@ -3,7 +3,6 @@
 import { Autocomplete } from "@/components/autocomplete/autocomplete";
 import styles from "./actors-autocomplete.module.css";
 import { Person } from "@/lib/definitions";
-import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useQueryString } from "@/lib/useQueryString";
 import { useEffect, useRef, useState } from "react";
