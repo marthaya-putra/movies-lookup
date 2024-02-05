@@ -17,13 +17,13 @@ export const SearchResult = async ({
     String(searchParams?.page) || "1"
   );
 
-  const { results, totalPages } = recommendedFilms;
+  const { results, totalPages } = recommendedFilms || {};
 
   return (
     <div className={styles.Container}>
       <Pager totalPages={totalPages} />
       <MovieCardsContainer>
-        {results.map((result) => {
+        {(results || []).map((result) => {
           const key = result.title + result.releaseDate;
 
           return <MovieCard key={key} film={result} />;
