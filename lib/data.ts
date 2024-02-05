@@ -19,7 +19,7 @@ export async function fetchRecommendedFilms(
   const data = await fetchFromTMDB(url);
   const result: DiscoverResult = {
     page: data.page,
-    results: data.results.map((res: any) => ({
+    results: (data.results || []).map((res: any) => ({
       posterPath: `https://image.tmdb.org/t/p/w500${res.poster_path}`,
       title: res.title || res.name,
       overview: res.overview,
