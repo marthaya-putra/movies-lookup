@@ -14,7 +14,7 @@ export const SearchResult = async ({
     searchParams?.type || "movie",
     searchParams?.genres || "",
     searchParams?.rating || RatingItems[0].value,
-    String(searchParams?.page) || "1"
+    String(searchParams?.page || "1")
   );
 
   const { results, totalPages } = recommendedFilms || {};

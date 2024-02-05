@@ -16,6 +16,7 @@ export async function fetchRecommendedFilms(
   page: string = "1"
 ) {
   const url = `${TMDB_URL}/discover/${type}?include_adult=true&language=en-US&page=${page}&sort_by=popularity.desc&vote_average.gte=${rating}&with_genres=${genres}`;
+  console.log({ url });
   const data = await fetchFromTMDB(url);
   const result: DiscoverResult = {
     page: data.page,
