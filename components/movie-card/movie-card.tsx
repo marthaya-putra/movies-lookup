@@ -25,6 +25,7 @@ export const MovieCard = ({ film }: MovieCardProps) => {
         src={film.posterPath}
         alt={film.title}
         className={styles.Image}
+        priority
       />
       <h4 style={{ maxWidth: "200px", padding: "8px 0" }}>
         {film.title} ({year})
