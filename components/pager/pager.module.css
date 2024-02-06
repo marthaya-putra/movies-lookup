@@ -16,6 +16,11 @@
   text-decoration: none;
 }
 
+.Pager:hover {
+  background-color: var(--violet-11);
+  color: white;
+}
+
 .PageNumber {
   color: white;
   display: flex;
