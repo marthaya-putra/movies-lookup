@@ -31,4 +31,5 @@
 
 .Pager[aria-disabled="true"] {
   background: #919eab;
+  pointer-events: none;
 }
